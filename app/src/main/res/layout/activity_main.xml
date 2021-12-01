@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.478" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btn_cityId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="GET CITY ID "
@@ -34,30 +34,7 @@
         tools:layout_editor_absoluteY="122dp"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GET CITY NAME "
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.402"
-        app:layout_constraintStart_toStartOf="@+id/button5"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="122dp" />
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GET WEATHER BY CITY"
-        android:textSize="10dp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.995"
-        app:layout_constraintStart_toStartOf="@+id/button5"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="122dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
