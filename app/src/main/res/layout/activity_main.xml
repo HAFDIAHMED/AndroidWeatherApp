@@ -66,6 +66,7 @@
     </LinearLayout>
 
     <ListView
+        android:id="@+id/listViewWeather"
         android:layout_width="409dp"
         android:layout_height="488dp"
         app:layout_constraintBottom_toBottomOf="parent"

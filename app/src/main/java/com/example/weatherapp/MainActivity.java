@@ -10,7 +10,7 @@ import android.widget.ListView;
 public class MainActivity extends AppCompatActivity {
     Button btn_getId,btn_getName,btn_getWeather;
     EditText cityName_textInput;
-    ListView list_view_weather;
+    ListView weather_list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,5 +19,6 @@ public class MainActivity extends AppCompatActivity {
         btn_getName=findViewById(R.id.btn_cityName);
         btn_getWeather=findViewById(R.id.btn_cityWeather);
         cityName_textInput=findViewById(R.id.cityNameText);
+        weather_list=findViewById(R.id.listViewWeather);
     }
 }
