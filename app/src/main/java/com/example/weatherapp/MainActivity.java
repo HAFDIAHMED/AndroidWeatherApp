@@ -18,5 +18,6 @@ public class MainActivity extends AppCompatActivity {
         btn_getId=findViewById(R.id.btn_cityId);
         btn_getName=findViewById(R.id.btn_cityName);
         btn_getWeather=findViewById(R.id.btn_cityWeather);
+        cityName_textInput=findViewById(R.id.cityNameText);
     }
 }
