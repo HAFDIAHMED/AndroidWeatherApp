@@ -3,9 +3,11 @@ package com.example.weatherapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button btn_getId,btn_getName,btn_getWeather;
@@ -21,6 +23,11 @@ public class MainActivity extends AppCompatActivity {
         cityName_textInput=findViewById(R.id.cityNameText);
         weather_list=findViewById(R.id.listViewWeather);
         //make listeners
-        
+        btn_getId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"City ID",Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
