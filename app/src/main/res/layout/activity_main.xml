@@ -16,10 +16,10 @@
         android:text="City Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.244" />
+        app:layout_constraintVertical_bias="0.163" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -64,6 +64,11 @@
             tools:ignore="MissingConstraints" />
     </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="414dp"
+        android:layout_height="505dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="158dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
