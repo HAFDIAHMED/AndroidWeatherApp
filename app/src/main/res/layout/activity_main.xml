@@ -5,20 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="50dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
-    </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <LinearLayout
+        <LinearLayout
         android:layout_width="412dp"
         android:layout_height="133dp"
         android:orientation="horizontal"
@@ -59,7 +46,15 @@
 
     </LinearLayout>
 
-
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="286dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
