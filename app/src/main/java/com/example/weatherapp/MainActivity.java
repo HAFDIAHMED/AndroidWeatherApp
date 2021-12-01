@@ -20,5 +20,7 @@ public class MainActivity extends AppCompatActivity {
         btn_getWeather=findViewById(R.id.btn_cityWeather);
         cityName_textInput=findViewById(R.id.cityNameText);
         weather_list=findViewById(R.id.listViewWeather);
+        //make listeners
+        
     }
 }
