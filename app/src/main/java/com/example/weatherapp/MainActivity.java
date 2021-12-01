@@ -29,5 +29,17 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"City ID",Toast.LENGTH_LONG).show();
             }
         });
+        btn_getName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"City NAME",Toast.LENGTH_LONG).show();
+            }
+        });
+        btn_getWeather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"City WEATHER",Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
