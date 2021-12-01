@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         btn_getId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"City ID",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,"City ID "+cityName_textInput.getText().toString(),Toast.LENGTH_LONG).show();
             }
         });
         btn_getName.setOnClickListener(new View.OnClickListener() {
