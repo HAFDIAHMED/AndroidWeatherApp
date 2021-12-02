@@ -94,7 +94,15 @@ public class WeatherAppService {
                     first_day.setId(first_day_from_api.getInt("id"));
                     first_day.setWeather_state_name(first_day_from_api.getString("weather_state_name"));
                     first_day.setWeather_state_abbr(first_day_from_api.getString("weather_state_abbr"));
-                    first_day.setWind_direction_compass(first_day_from_api.toString("wind_direction_compass"));
+                    first_day.setWind_direction_compass(first_day_from_api.getString("wind_direction_compass"));
+                    first_day.setCreated(first_day_from_api.getString("created"));
+                    first_day.setApplicable_date(first_day_from_api.getString("applicable_date"));
+                    first_day.setMin_temp(first_day_from_api.getLong("min_temp"));
+                    first_day.setMax_temp(first_day_from_api.getLong("max_temp"));
+                    
+
+
+
 
 
                 } catch (JSONException e) {
