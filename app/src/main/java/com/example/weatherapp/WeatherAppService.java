@@ -1,6 +1,7 @@
 package com.example.weatherapp;
 
 import android.content.Context;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -22,24 +23,27 @@ public class WeatherAppService {
     public WeatherAppService(Context context) {
         this.context = context;
     }
-    public interface  VolleyResponseListener {
-        void OnError (String message);
+
+    public interface VolleyResponseListener {
+        void OnError(String message);
+
         void OnResponse(String cityID);
 
     }
 
     Context context;
     String CityID;
-    public void getCityId (String cityName,VolleyResponseListener  volleyResponseListener) {
 
-        String url =QUERY_CITY_ID+cityName ;
-        JsonArrayRequest requestJson = new JsonArrayRequest(Request.Method.GET,url,null, new Response.Listener<JSONArray>() {
+    public void getCityId(String cityName, VolleyResponseListener volleyResponseListener) {
+
+        String url = QUERY_CITY_ID + cityName;
+        JsonArrayRequest requestJson = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                 CityID="";
+                CityID = "";
                 try {
-                    JSONObject cityinfo=response.getJSONObject(0);
-                    CityID=cityinfo.getString("woeid");
+                    JSONObject cityinfo = response.getJSONObject(0);
+                    CityID = cityinfo.getString("woeid");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -57,27 +61,35 @@ public class WeatherAppService {
         MySingleton.getInstance(context).addToRequestQueue(requestJson);
         //return CityID;
     }
-    public  void getForcastByID(String cityID){
+
+    public void getForcastByID(String cityID) {
         //List<WeatherReportModel> report = new ArrayList<>();
         List<WeatherReportModel> report = new ArrayList<>();
         String url = QUERY_CITY_WEATHER_BY_ID + cityID;
-            //get the json object
-        JsonObjectRequest requestJson = new JsonObjectRequest()Request.Method.GET,url,null, new Response.Listener<JSONObject>() {
+        //get the json object
+        JsonObjectRequest requestJson = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-
+                Toast.makeText()
             }
 
 
-            //get the property called "consolidated_weather"
 
             // get each item in the array and assign it to a new WeatherReaport
-    }
-    
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(context,"show the error",Toast.LENGTH_LONG).show();
+            }
+        });
+        //get the property called "consolidated_weather"
+
+
 
     /*public List<WeatherReportModel> geCityByName(String cityName){
 
     }*/
 
+    }
 }
 
