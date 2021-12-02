@@ -40,13 +40,13 @@ public class WeatherAppService {
                     e.printStackTrace();
                 }
 
-                Toast.makeText(context,"City ID ="+ CityID,Toast.LENGTH_LONG).show();
+                //Toast.makeText(context,"City ID ="+ CityID,Toast.LENGTH_LONG).show();
                 volleyResponseListener.OnResponse(CityID);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(context,"show the error",Toast.LENGTH_LONG).show();
+                //Toast.makeText(context,"show the error",Toast.LENGTH_LONG).show();
                 volleyResponseListener.OnError("something wrong");
             }
         });
