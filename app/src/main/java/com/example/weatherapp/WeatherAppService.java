@@ -26,7 +26,7 @@ public class WeatherAppService {
 
     Context context;
     String CityID;
-    public String getCityId (String cityName,VolleyResponseListener  volleyResponseListener) {
+    public void getCityId (String cityName,VolleyResponseListener  volleyResponseListener) {
 
         String url =QUERY_CITY_ID+cityName ;
         JsonArrayRequest requestJson = new JsonArrayRequest(Request.Method.GET,url,null, new Response.Listener<JSONArray>() {
@@ -47,11 +47,11 @@ public class WeatherAppService {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(context,"show the error",Toast.LENGTH_LONG).show();
-                volleyResponseListener.OnError();
+                volleyResponseListener.OnError("something wrong");
             }
         });
         MySingleton.getInstance(context).addToRequestQueue(requestJson);
-        return CityID;
+        //return CityID;
     }
     /*public List<WeatherReportModel> getCityByID(String cityID){
 
