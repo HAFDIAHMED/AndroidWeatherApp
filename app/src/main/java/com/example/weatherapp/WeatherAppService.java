@@ -61,8 +61,14 @@ public class WeatherAppService {
         MySingleton.getInstance(context).addToRequestQueue(requestJson);
         //return CityID;
     }
+    public interface ForcastByIdResponse {
+        void OnError(String message);
 
-    public void getForcastByID(String cityID) {
+        void OnResponse(WeatherReportModel weatherReportModel);
+
+    }
+
+    public void getForcastByID(String cityID,ForcastByIdResponse forcastByIdResponse) {
         //List<WeatherReportModel> report = new ArrayList<>();
         List<WeatherReportModel> report = new ArrayList<>();
         String url = QUERY_CITY_WEATHER_BY_ID + cityID;
@@ -75,21 +81,7 @@ public class WeatherAppService {
                     JSONArray  consolidated_weather_list =response.getJSONArray("consolidated_weather");
                     //
                     WeatherReportModel first_day= new WeatherReportModel();
-                    private int id;
-                    private String weather_state_name;
-                    private String weather_state_abbr;
-                    private String wind_direction_compass;
-                    private String created;
-                    private String applicable_date;
-                    private float min_temp;
-                    private float max_temp;
-                    private float the_temp;
-                    private float wind_speed;
-                    private float wind_direction;
-                    private float air_pressure;
-                    private int humidity;
-                    private float visibility;
-                    private int predictability;
+
                     JSONObject first_day_from_api = (JSONObject) consolidated_weather_list.get(0);
                     first_day.setId(first_day_from_api.getInt("id"));
                     first_day.setWeather_state_name(first_day_from_api.getString("weather_state_name"));
@@ -107,7 +99,7 @@ public class WeatherAppService {
                     first_day.setVisibility(first_day_from_api.getLong("visibility"));
                     first_day.setPredictability(first_day_from_api.getInt("predictability"));
 
-
+                    forcastByIdResponse.on
 
 
 
