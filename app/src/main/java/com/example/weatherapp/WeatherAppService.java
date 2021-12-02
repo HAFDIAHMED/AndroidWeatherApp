@@ -53,7 +53,7 @@ public class WeatherAppService {
         MySingleton.getInstance(context).addToRequestQueue(requestJson);
         //return CityID;
     }
-    /*public List<WeatherReportModel> getCityByID(String cityID){
+    /*public List<WeatherReportModel> getWeatherByID(String cityID){
 
     }
 
