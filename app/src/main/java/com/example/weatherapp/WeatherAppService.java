@@ -90,6 +90,8 @@ public class WeatherAppService {
                     private int humidity;
                     private float visibility;
                     private int predictability;
+                    JSONObject first_day_from_api = (JSONObject) consolidated_weather_list.get(0);
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
