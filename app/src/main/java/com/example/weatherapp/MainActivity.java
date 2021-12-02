@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Instantiate the RequestQueue.
-                RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
+                //RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
                 String url ="https://www.metaweather.com/api/location/search/?query="+cityName_textInput.getText().toString()  ;
                 JsonArrayRequest requestJson = new JsonArrayRequest(Request.Method.GET,url,null, new Response.Listener<JSONArray>() {
                     @Override
@@ -60,7 +60,9 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this,"show the error",Toast.LENGTH_LONG).show();
                     }
                 });
-                queue.add(requestJson);
+                MySingleton.getInstance(MainActivity.this).addToRequestQueue(requestJson);
+
+                //queue.add(requestJson);
 
                 /*// Request a string response from the provided URL.
                                     StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
