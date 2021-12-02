@@ -38,9 +38,12 @@ public class MainActivity extends AppCompatActivity {
         btn_getId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                WeatherAppService weatherAppService= new WeatherAppService(MainActivity.this) ;
+                String cityId=weatherAppService.getCityId(cityName_textInput.getText().toString());
+                Toast.makeText(MainActivity.this,"Return an ID of "+ cityId,Toast.LENGTH_LONG).show();
                 // Instantiate the RequestQueue.
                 //RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-                String url ="https://www.metaweather.com/api/location/search/?query="+cityName_textInput.getText().toString()  ;
+                /*String url ="https://www.metaweather.com/api/location/search/?query="+cityName_textInput.getText().toString()  ;
                 JsonArrayRequest requestJson = new JsonArrayRequest(Request.Method.GET,url,null, new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -60,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this,"show the error",Toast.LENGTH_LONG).show();
                     }
                 });
-                MySingleton.getInstance(MainActivity.this).addToRequestQueue(requestJson);
+                MySingleton.getInstance(MainActivity.this).addToRequestQueue(requestJson);*/
 
                 //queue.add(requestJson);
 
