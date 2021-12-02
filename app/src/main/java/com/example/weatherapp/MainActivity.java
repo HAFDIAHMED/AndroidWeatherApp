@@ -42,14 +42,16 @@ public class MainActivity extends AppCompatActivity {
                 JsonArrayRequest requestJson = new JsonArrayRequest(Request.Method.GET,url,null, new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        Toast.makeText()
+                        Toast.makeText(MainActivity.this,response.toString(),Toast.LENGTH_LONG).show();
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        Toast.makeText(MainActivity.this,"show the error",Toast.LENGTH_LONG).show();
                     }
                 });
+                queue.add(requestJson);
+
                 /*// Request a string response from the provided URL.
                                     StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                                             new Response.Listener<String>() {
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                                     });
 
                     // Add the request to the RequestQueue.*/
-                queue.add(stringRequest);
+                //queue.add(stringRequest);
                 Toast.makeText(MainActivity.this,"City ID "+cityName_textInput.getText().toString(),Toast.LENGTH_LONG).show();
             }
         });
