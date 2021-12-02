@@ -71,7 +71,13 @@ public class WeatherAppService {
             @Override
             public void onResponse(JSONObject response) {
                 Toast.makeText(context,response.toString(),Toast.LENGTH_LONG).show();
-                List<JSONObject>  consolidated_weather =response.getJSONArray("consolidated_weather");
+                try {
+                    JSONArray  consolidated_weather_list =response.getJSONArray("consolidated_weather");
+                    //
+                    WeatherReportModel first_day= new WeatherReportModel()
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
             }
 
