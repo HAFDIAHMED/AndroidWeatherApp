@@ -104,7 +104,18 @@ public class MainActivity extends AppCompatActivity {
         btn_getName.setOnClickListener(new View.OnClickListener()  {
             @Override
             public void onClick(View view) {
-                weatherAppService.getForcastByID("44418" );
+                weatherAppService.getForcastByID("44418", new WeatherAppService.ForcastByIdResponse() {
+                    @Override
+                    public void OnError(String message) {
+
+                    }
+
+                    @Override
+                    public void OnResponse(WeatherReportModel weatherReportModel) {
+                        Toast.makeText(MainActivity.this,weatherReportModel.toString(),Toast.LENGTH_SHORT).show();
+
+                    }
+                });
             }
         });
         btn_getWeather.setOnClickListener(new View.OnClickListener() {

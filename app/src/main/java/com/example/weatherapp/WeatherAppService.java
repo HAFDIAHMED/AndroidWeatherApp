@@ -76,7 +76,7 @@ public class WeatherAppService {
         JsonObjectRequest requestJson = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                //Toast.makeText(context,response.toString(),Toast.LENGTH_LONG).show();
+                Toast.makeText(context,response.toString(),Toast.LENGTH_LONG).show();
                 try {
                     JSONArray  consolidated_weather_list =response.getJSONArray("consolidated_weather");
                     //
