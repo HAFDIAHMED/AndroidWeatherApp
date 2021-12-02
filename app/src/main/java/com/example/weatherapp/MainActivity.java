@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Instantiate the RequestQueue.
                 RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-                String url ="https://www.metaweather.com/api/location/search/?query=london";
+                String url ="https://www.metaweather.com/api/location/search/?query=casablanca";
                 JsonArrayRequest requestJson = new JsonArrayRequest(Request.Method.GET,url,null, new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
                     // Add the request to the RequestQueue.*/
                 //queue.add(stringRequest);
-                Toast.makeText(MainActivity.this,"City ID "+cityName_textInput.getText().toString(),Toast.LENGTH_LONG).show();
+               // Toast.makeText(MainActivity.this,"City ID "+cityName_textInput.getText().toString(),Toast.LENGTH_LONG).show();
             }
         });
         btn_getName.setOnClickListener(new View.OnClickListener()  {
