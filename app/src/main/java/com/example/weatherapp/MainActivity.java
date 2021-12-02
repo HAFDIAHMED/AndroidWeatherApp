@@ -107,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 weatherAppService.getForcastByID("44418", new WeatherAppService.ForcastByIdResponse() {
                     @Override
                     public void OnError(String message) {
+                        Toast.makeText(MainActivity.this,"error ",Toast.LENGTH_SHORT).show();
 
                     }
 
