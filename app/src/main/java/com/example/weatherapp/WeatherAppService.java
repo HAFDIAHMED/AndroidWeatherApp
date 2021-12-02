@@ -99,7 +99,10 @@ public class WeatherAppService {
                     first_day.setApplicable_date(first_day_from_api.getString("applicable_date"));
                     first_day.setMin_temp(first_day_from_api.getLong("min_temp"));
                     first_day.setMax_temp(first_day_from_api.getLong("max_temp"));
+                    first_day.setThe_temp(first_day_from_api.getLong("the_temp"));
+                    first_day.setWind_speed(first_day_from_api.getLong("wind_speed"));
                     
+
 
 
 
