@@ -18,6 +18,11 @@ public class WeatherAppService {
     public WeatherAppService(Context context) {
         this.context = context;
     }
+    public interface  VolleyResponseListener {
+        void OnError (String message);
+        void OnResponse(String cityID);
+
+    }
 
     Context context;
     String CityID;
