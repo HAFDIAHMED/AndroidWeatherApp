@@ -16,6 +16,6 @@ public class WeatherReportModel {
             "humidity": 71,
             "visibility": 10.736051459476656,
             "predictability": 73
-    
+    private id
 
 }
