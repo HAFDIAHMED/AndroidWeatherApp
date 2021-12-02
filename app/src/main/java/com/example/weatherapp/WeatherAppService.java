@@ -89,6 +89,8 @@ public class WeatherAppService {
     /*public List<WeatherReportModel> geCityByName(String cityName){
 
     }*/
+        MySingleton.getInstance(context).addToRequestQueue(requestJson);
+
 
     }
 }
