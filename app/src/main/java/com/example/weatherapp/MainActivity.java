@@ -39,14 +39,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 WeatherAppService weatherAppService= new WeatherAppService(MainActivity.this) ;
-                String cityId=weatherAppService.getCityId(cityName_textInput.getText().toString(), new WeatherAppService.VolleyResponseListener() {
+                 weatherAppService =weatherAppService.getCityId(cityName_textInput.getText().toString(), new WeatherAppService.VolleyResponseListener() {
                     @Override
                     public void OnError(String message) {
-                        
+                        Toast.makeText(MainActivity.this,"Error",Toast.LENGTH_LONG).show();
+
                     }
 
                     @Override
                     public void OnResponse(String cityID) {
+                        Toast.makeText(MainActivity.this,"Return an ID of "+ cityId,Toast.LENGTH_LONG).show();
 
                     }
                 });
