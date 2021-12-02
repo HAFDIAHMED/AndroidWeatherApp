@@ -101,7 +101,10 @@ public class WeatherAppService {
                     first_day.setMax_temp(first_day_from_api.getLong("max_temp"));
                     first_day.setThe_temp(first_day_from_api.getLong("the_temp"));
                     first_day.setWind_speed(first_day_from_api.getLong("wind_speed"));
+                    first_day.setWind_direction(first_day_from_api.getLong(("wind_direction")));
+                    first_day.setAir_pressure(first_day_from_api.getLong("air_pressure"));
                     
+
 
 
 
