@@ -12,6 +12,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class WeatherAppService {
     public static final String QUERY_CITY_ID = "https://www.metaweather.com/api/location/search/?query=";
 
@@ -53,7 +56,7 @@ public class WeatherAppService {
         MySingleton.getInstance(context).addToRequestQueue(requestJson);
         //return CityID;
     }
-    public  getForcastByID(String cityID){
+    public  void getForcastByID(String cityID){
         List<WeatherReportModel> report = new ArrayList<>();
 
     }
