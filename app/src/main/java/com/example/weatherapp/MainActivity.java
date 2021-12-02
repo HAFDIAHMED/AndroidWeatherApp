@@ -18,6 +18,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,7 +44,12 @@ public class MainActivity extends AppCompatActivity {
                 JsonArrayRequest requestJson = new JsonArrayRequest(Request.Method.GET,url,null, new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        JSONObject cityinfo=response.getJSONObject();
+                        try {
+                            JSONObject cityinfo=response.getJSONObject(0);
+                            String CityID=cityinfo.getString("woeid");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
 
                         Toast.makeText(MainActivity.this,response.toString(),Toast.LENGTH_LONG).show();
                     }
