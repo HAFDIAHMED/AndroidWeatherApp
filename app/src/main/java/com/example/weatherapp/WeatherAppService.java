@@ -17,6 +17,7 @@ import java.util.List;
 
 public class WeatherAppService {
     public static final String QUERY_CITY_ID = "https://www.metaweather.com/api/location/search/?query=";
+    public static final String QUERY_CITY_WEATHER_BY_ID = "https://www.metaweather.com/api/location/";
 
     public WeatherAppService(Context context) {
         this.context = context;
@@ -59,11 +60,12 @@ public class WeatherAppService {
     public  void getForcastByID(String cityID){
         //List<WeatherReportModel> report = new ArrayList<>();
         List<WeatherReportModel> report = new ArrayList<>();
+        String url = QUERY_CITY_WEATHER_BY_ID +
             //get the json object
         JsonObjectRequest requestJson = new JsonObjectRequest()Request.Method.GET,url,null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                
+
             }
 
 
