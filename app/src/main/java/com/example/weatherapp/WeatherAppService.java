@@ -53,11 +53,12 @@ public class WeatherAppService {
         MySingleton.getInstance(context).addToRequestQueue(requestJson);
         //return CityID;
     }
-    /*public List<WeatherReportModel> getWeatherByID(String cityID){
+    public  getForcastByID(String cityID){
+        List<WeatherReportModel> report = new Array<>();
 
     }
 
-    public List<WeatherReportModel> geCityByName(String cityName){
+    /*public List<WeatherReportModel> geCityByName(String cityName){
 
     }*/
 }

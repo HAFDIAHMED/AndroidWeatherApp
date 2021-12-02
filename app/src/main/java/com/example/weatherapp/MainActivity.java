@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         btn_getName.setOnClickListener(new View.OnClickListener()  {
             @Override
             public void onClick(View view) {
-                weatherAppService.getWeatherById(cityName_textInput.getText().toString(), new WeatherAppService.VolleyResponseListener() {
+                weatherAppService.getForcastByID(cityName_textInput.getText().toString(), new WeatherAppService.VolleyResponseListener() {
                     @Override
                     public void OnError(String message) {
                         Toast.makeText(MainActivity.this,"someting wrong here ",Toast.LENGTH_LONG).show();
