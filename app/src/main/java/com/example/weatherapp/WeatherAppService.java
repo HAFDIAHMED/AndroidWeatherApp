@@ -54,7 +54,7 @@ public class WeatherAppService {
         //return CityID;
     }
     public  getForcastByID(String cityID){
-        List<WeatherReportModel> report = new Array<>();
+        List<WeatherReportModel> report = new ArrayList<>();
 
     }
 

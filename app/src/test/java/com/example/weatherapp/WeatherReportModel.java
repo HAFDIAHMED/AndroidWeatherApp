@@ -1,2 +1,5 @@
-package com.example.weatherapp;public class WeatherReportModel {
+package com.example.weatherapp;
+
+public class WeatherReportModel {
+
 }
