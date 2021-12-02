@@ -2,8 +2,10 @@ package com.example.weatherapp;
 
 import android.content.Context;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.Volley;
 
 public class MySingleton {
     private static MySingleton instance;
@@ -15,7 +17,7 @@ public class MySingleton {
         ctx = context;
         requestQueue = getRequestQueue();
 
-        
+
     }
 
     public static synchronized MySingleton getInstance(Context context) {
@@ -38,7 +40,5 @@ public class MySingleton {
         getRequestQueue().add(req);
     }
 
-    public ImageLoader getImageLoader() {
-        return imageLoader;
-    }
+
 }
