@@ -62,21 +62,22 @@ public class WeatherAppService {
         List<WeatherReportModel> report = new ArrayList<>();
         String url = QUERY_CITY_WEATHER_BY_ID + cityID;
             //get the json object
-        JsonObjectRequest requestJson = new JsonObjectRequest(Request.Method.GET,url,null, new Response.Listener<JSONObject>() {
+        JsonObjectRequest requestJson = new JsonObjectRequest()Request.Method.GET,url,null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
 
-            }, new 
+            }
 
 
             //get the property called "consolidated_weather"
 
             // get each item in the array and assign it to a new WeatherReaport
     }
-
+    
 
     /*public List<WeatherReportModel> geCityByName(String cityName){
 
     }*/
 
 }
+
