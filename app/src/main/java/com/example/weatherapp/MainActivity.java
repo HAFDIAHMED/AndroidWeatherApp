@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         btn_getName.setOnClickListener(new View.OnClickListener()  {
             @Override
             public void onClick(View view) {
-                
+                weatherAppService.getForcastByID("44418" );
             }
         });
         btn_getWeather.setOnClickListener(new View.OnClickListener() {
