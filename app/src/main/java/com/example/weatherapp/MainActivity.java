@@ -18,6 +18,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     Button btn_getId,btn_getName,btn_getWeather;
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 JsonArrayRequest requestJson = new JsonArrayRequest(Request.Method.GET,url,null, new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
+                        JSONObject cityinfo=response.getJSONObject();
+
                         Toast.makeText(MainActivity.this,response.toString(),Toast.LENGTH_LONG).show();
                     }
                 }, new Response.ErrorListener() {
