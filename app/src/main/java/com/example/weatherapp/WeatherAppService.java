@@ -71,6 +71,8 @@ public class WeatherAppService {
             @Override
             public void onResponse(JSONObject response) {
                 Toast.makeText(context,response.toString(),Toast.LENGTH_LONG).show();
+                List<JSONObject>  consolidated_weather =response.getJSONArray("consolidated_weather");
+
             }
 
 
