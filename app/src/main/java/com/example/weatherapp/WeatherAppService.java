@@ -91,6 +91,10 @@ public class WeatherAppService {
                     private float visibility;
                     private int predictability;
                     JSONObject first_day_from_api = (JSONObject) consolidated_weather_list.get(0);
+                    first_day.setId(first_day_from_api.getInt("id"));
+                    first_day.setWeather_state_name(first_day_from_api.getString("weather_state_name"));
+                    first_day.setWeather_state_abbr(first_day_from_api.getString(""));
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
