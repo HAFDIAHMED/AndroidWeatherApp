@@ -9,6 +9,13 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 public class MainActivity extends AppCompatActivity {
     Button btn_getId,btn_getName,btn_getWeather;
     EditText cityName_textInput;
@@ -26,10 +33,31 @@ public class MainActivity extends AppCompatActivity {
         btn_getId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Instantiate the RequestQueue.
+                RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
+                String url ="https://www.metaweather.com/api/location/search/?query=london";
+
+// Request a string response from the provided URL.
+                StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                // Display the first 500 characters of the response string.
+                                Toast.makeText(MainActivity.this,response,Toast.LENGTH_LONG).show();
+                            }
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(MainActivity.this,"error ",Toast.LENGTH_LONG).show();
+                    }
+                });
+
+// Add the request to the RequestQueue.
+                queue.add(stringRequest);
                 Toast.makeText(MainActivity.this,"City ID "+cityName_textInput.getText().toString(),Toast.LENGTH_LONG).show();
             }
         });
-        btn_getName.setOnClickListener(new View.OnClickListener() {
+        btn_getName.setOnClickListener(new View.OnClickListener()  {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this,"City NAME",Toast.LENGTH_LONG).show();
