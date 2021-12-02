@@ -44,14 +44,15 @@ public class MainActivity extends AppCompatActivity {
                 JsonArrayRequest requestJson = new JsonArrayRequest(Request.Method.GET,url,null, new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
+                        String CityID="";
                         try {
                             JSONObject cityinfo=response.getJSONObject(0);
-                            String CityID=cityinfo.getString("woeid");
+                             CityID=cityinfo.getString("woeid");
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
 
-                        Toast.makeText(MainActivity.this,response.toString(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this,"City ID ="+ CityID,Toast.LENGTH_LONG).show();
                     }
                 }, new Response.ErrorListener() {
                     @Override
