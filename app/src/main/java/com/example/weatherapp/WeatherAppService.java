@@ -6,6 +6,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,8 +60,13 @@ public class WeatherAppService {
         //List<WeatherReportModel> report = new ArrayList<>();
         List<WeatherReportModel> report = new ArrayList<>();
             //get the json object
+        JsonObjectRequest requestJson = new JsonObjectRequest()Request.Method.GET,url,null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                
+            }
 
-        
+
             //get the property called "consolidated_weather"
 
             // get each item in the array and assign it to a new WeatherReaport
