@@ -104,7 +104,20 @@ public class MainActivity extends AppCompatActivity {
         btn_getName.setOnClickListener(new View.OnClickListener()  {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"City NAME",Toast.LENGTH_LONG).show();
+                weatherAppService.getWeather(cityName_textInput.getText().toString(), new WeatherAppService.VolleyResponseListener() {
+                    @Override
+                    public void OnError(String message) {
+                        Toast.makeText(MainActivity.this,"someting wrong here ",Toast.LENGTH_LONG).show();
+
+                    }
+
+                    @Override
+                    public void OnResponse(String cityID) {
+                        Toast.makeText(MainActivity.this,"Return an ID of "+ cityID,Toast.LENGTH_LONG).show();
+
+                    }
+
+                });
             }
         });
         btn_getWeather.setOnClickListener(new View.OnClickListener() {
