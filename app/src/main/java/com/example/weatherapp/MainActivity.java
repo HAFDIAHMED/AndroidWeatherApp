@@ -35,10 +35,11 @@ public class MainActivity extends AppCompatActivity {
         cityName_textInput=findViewById(R.id.cityNameText);
         weather_list=findViewById(R.id.listViewWeather);
         //make listeners
+        final WeatherAppService weatherAppService= new WeatherAppService(MainActivity.this) ;
+
         btn_getId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                WeatherAppService weatherAppService= new WeatherAppService(MainActivity.this) ;
                 weatherAppService.getCityId(cityName_textInput.getText().toString(), new WeatherAppService.VolleyResponseListener() {
                     @Override
                     public void OnError(String message) {
