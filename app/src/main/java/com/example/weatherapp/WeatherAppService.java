@@ -59,10 +59,11 @@ public class WeatherAppService {
     public  void getForcastByID(String cityID){
         List<WeatherReportModel> report = new ArrayList<>();
             //get the json object
+            
 
             //get the property called "consolidated_weather"
 
-            // get each item in 
+            // get each item in the array and assign it to a new WeatherReaport
     }
 
     /*public List<WeatherReportModel> geCityByName(String cityName){
