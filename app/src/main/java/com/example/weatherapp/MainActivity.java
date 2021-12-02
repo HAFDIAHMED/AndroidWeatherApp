@@ -37,22 +37,22 @@ public class MainActivity extends AppCompatActivity {
                 RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
                 String url ="https://www.metaweather.com/api/location/search/?query=london";
 
-// Request a string response from the provided URL.
-                StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                                // Display the first 500 characters of the response string.
-                                Toast.makeText(MainActivity.this,response,Toast.LENGTH_LONG).show();
-                            }
-                        }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MainActivity.this,"error ",Toast.LENGTH_LONG).show();
-                    }
-                });
+                /*// Request a string response from the provided URL.
+                                    StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                                            new Response.Listener<String>() {
+                                                @Override
+                                                public void onResponse(String response) {
+                                                    // Display the first 500 characters of the response string.
+                                                    Toast.makeText(MainActivity.this,response,Toast.LENGTH_LONG).show();
+                                                }
+                                            }, new Response.ErrorListener() {
+                                        @Override
+                                        public void onErrorResponse(VolleyError error) {
+                                            Toast.makeText(MainActivity.this,"error ",Toast.LENGTH_LONG).show();
+                                        }
+                                    });
 
-// Add the request to the RequestQueue.
+                    // Add the request to the RequestQueue.*/
                 queue.add(stringRequest);
                 Toast.makeText(MainActivity.this,"City ID "+cityName_textInput.getText().toString(),Toast.LENGTH_LONG).show();
             }
