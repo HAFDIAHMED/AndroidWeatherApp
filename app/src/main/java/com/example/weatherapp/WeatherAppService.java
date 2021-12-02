@@ -74,7 +74,22 @@ public class WeatherAppService {
                 try {
                     JSONArray  consolidated_weather_list =response.getJSONArray("consolidated_weather");
                     //
-                    WeatherReportModel first_day= new WeatherReportModel()
+                    WeatherReportModel first_day= new WeatherReportModel();
+                    private int id;
+                    private String weather_state_name;
+                    private String weather_state_abbr;
+                    private String wind_direction_compass;
+                    private String created;
+                    private String applicable_date;
+                    private float min_temp;
+                    private float max_temp;
+                    private float the_temp;
+                    private float wind_speed;
+                    private float wind_direction;
+                    private float air_pressure;
+                    private int humidity;
+                    private float visibility;
+                    private int predictability;
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

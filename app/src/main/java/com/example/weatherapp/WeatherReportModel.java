@@ -37,6 +37,9 @@ public class WeatherReportModel {
         this.predictability = predictability;
     }
 
+    public WeatherReportModel() {
+    }
+
     public int getId() {
         return id;
     }
